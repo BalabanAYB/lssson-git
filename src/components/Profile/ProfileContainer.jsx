@@ -15,11 +15,16 @@ const ProfileContainerAPI = (props) => {
     let [userId, getUserId] = useState(props.match.params.userId)
 
     useEffect( () => {
+        
         if(!userId) getUserId(props.userId)
         
         props.usersProfileThunk(userId)
         props.getStatusThunk(userId)
     }, [userId])
+
+    useEffect ( () => {
+        getUserId(props.match.params.userId)
+    }, [props.match.params.userId])
 
     return <Profile {...props} status={props.status}
      updateupdateStatusThunk={props.updateStatusThunk} profile={props.profile}/>
