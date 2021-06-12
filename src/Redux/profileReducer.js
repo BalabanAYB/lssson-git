@@ -8,7 +8,7 @@ const UPDATE_STATUS = 'UPDATE_STATUS';
 const DELETE_POST = 'DELETE_POST';
 
 export const addPost = (post) => ({ type: ADD_POST, post })
-export const deletePost = (id) => ({type:DELETE_POST, id})
+export const deletePost = (id) => ({ type: DELETE_POST, id })
 export const newPostText = (text) => ({ type: NEW_POST_TEXT, text: text })
 export const newUsersProfile = (profile) => ({ type: NEW_USERS_PROFILE, profile })
 export const getStatus = (status) => ({ type: GET_STATUS, status })
@@ -16,21 +16,28 @@ export const updateStatus = (status) => ({ type: UPDATE_STATUS, status })
 
 export const usersProfileThunk = (userId) => async (dispatch) => {
     let data = await usersAPI.getUsersProfile(userId)
-                dispatch(newUsersProfile(data))
+    dispatch(newUsersProfile(data))
 }
 
-export const getStatusThunk = (userId) => async(dispatch) => {
+export const getStatusThunk = (userId) => async (dispatch) => {
 
-        let data = await profileAPI.getStatus(userId)
-                dispatch(getStatus(data))
+    let data = await profileAPI.getStatus(userId)
+    dispatch(getStatus(data))
+}
+
+export const setPhotos = (photos) => async (dispatch) => {
+    let data = await profileAPI.setPhotos(photos)
+    if (data.data.resultCode == 0) {
+        dispatch(setPhotos(photos))
     }
+}
 
 
 export const updateStatusThunk = (status) => async (dispatch) => {
-      let data =  await profileAPI.updateStatus(status)
-                if (data.data.resultCode === 0) {
-                    dispatch(updateStatus(status))
-                }
+    let data = await profileAPI.updateStatus(status)
+    if (data.data.resultCode === 0) {
+        dispatch(updateStatus(status))
+    }
 }
 
 let initialState = {
@@ -69,13 +76,13 @@ const profileReducer = (state = initialState, action) => {
                 status: action.status
             }
         }
-case DELETE_POST: {
-    return {
-        ...state,
-        posts: state.posts.filter(p => p.id != action.id)
+        case DELETE_POST: {
+            return {
+                ...state,
+                posts: state.posts.filter(p => p.id != action.id)
 
-    }
-}
+            }
+        }
 
         case UPDATE_STATUS: {
             return {

@@ -59,7 +59,11 @@ updateStatus (status) {
     .then(response => {
         return response
     })
-}
+},
+ setPhotos (photos) {
+     const FormData = new FormData;
+     return instance.put(`profile/photos`, FormData )
+ }
 }
 
 export const authMeAPI = {
