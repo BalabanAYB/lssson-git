@@ -1,0 +1,43 @@
+{
+  "files": {
+    "static/js/0.af0b6332.chunk.js": "/lssson-git/static/js/0.af0b6332.chunk.js",
+    "static/js/0.af0b6332.chunk.js.map": "/lssson-git/static/js/0.af0b6332.chunk.js.map",
+    "main.css": "/lssson-git/static/css/main.c59ddfd0.chunk.css",
+    "main.js": "/lssson-git/static/js/main.dfe7a475.chunk.js",
+    "main.js.map": "/lssson-git/static/js/main.dfe7a475.chunk.js.map",
+    "runtime-main.js": "/lssson-git/static/js/runtime-main.3e98dfab.js",
+    "runtime-main.js.map": "/lssson-git/static/js/runtime-main.3e98dfab.js.map",
+    "static/js/3.240f9c35.chunk.js": "/lssson-git/static/js/3.240f9c35.chunk.js",
+    "static/js/3.240f9c35.chunk.js.map": "/lssson-git/static/js/3.240f9c35.chunk.js.map",
+    "static/css/4.5ef080ed.chunk.css": "/lssson-git/static/css/4.5ef080ed.chunk.css",
+    "static/js/4.cfdac2e2.chunk.js": "/lssson-git/static/js/4.cfdac2e2.chunk.js",
+    "static/js/4.cfdac2e2.chunk.js.map": "/lssson-git/static/js/4.cfdac2e2.chunk.js.map",
+    "static/css/5.0893e50d.chunk.css": "/lssson-git/static/css/5.0893e50d.chunk.css",
+    "static/js/5.84100986.chunk.js": "/lssson-git/static/js/5.84100986.chunk.js",
+    "static/js/5.84100986.chunk.js.map": "/lssson-git/static/js/5.84100986.chunk.js.map",
+    "static/css/6.49e5776a.chunk.css": "/lssson-git/static/css/6.49e5776a.chunk.css",
+    "static/js/6.a43dcfbc.chunk.js": "/lssson-git/static/js/6.a43dcfbc.chunk.js",
+    "static/js/6.a43dcfbc.chunk.js.map": "/lssson-git/static/js/6.a43dcfbc.chunk.js.map",
+    "static/css/7.a584c727.chunk.css": "/lssson-git/static/css/7.a584c727.chunk.css",
+    "static/js/7.b425f764.chunk.js": "/lssson-git/static/js/7.b425f764.chunk.js",
+    "static/js/7.b425f764.chunk.js.map": "/lssson-git/static/js/7.b425f764.chunk.js.map",
+    "static/js/8.80c515ef.chunk.js": "/lssson-git/static/js/8.80c515ef.chunk.js",
+    "static/js/8.80c515ef.chunk.js.map": "/lssson-git/static/js/8.80c515ef.chunk.js.map",
+    "index.html": "/lssson-git/index.html",
+    "static/css/4.5ef080ed.chunk.css.map": "/lssson-git/static/css/4.5ef080ed.chunk.css.map",
+    "static/css/5.0893e50d.chunk.css.map": "/lssson-git/static/css/5.0893e50d.chunk.css.map",
+    "static/css/6.49e5776a.chunk.css.map": "/lssson-git/static/css/6.49e5776a.chunk.css.map",
+    "static/css/7.a584c727.chunk.css.map": "/lssson-git/static/css/7.a584c727.chunk.css.map",
+    "static/css/main.c59ddfd0.chunk.css.map": "/lssson-git/static/css/main.c59ddfd0.chunk.css.map",
+    "static/js/0.af0b6332.chunk.js.LICENSE.txt": "/lssson-git/static/js/0.af0b6332.chunk.js.LICENSE.txt",
+    "static/js/3.240f9c35.chunk.js.LICENSE.txt": "/lssson-git/static/js/3.240f9c35.chunk.js.LICENSE.txt",
+    "static/media/Settings.816e2b9b.gif": "/lssson-git/static/media/Settings.816e2b9b.gif",
+    "static/media/user.86873d81.png": "/lssson-git/static/media/user.86873d81.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3e98dfab.js",
+    "static/js/3.240f9c35.chunk.js",
+    "static/css/main.c59ddfd0.chunk.css",
+    "static/js/main.dfe7a475.chunk.js"
+  ]
+}
