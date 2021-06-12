@@ -1,0 +1,21 @@
+.footer{
+    grid-area: f;
+
+    height: 60px;
+    background-color: aqua;
+    display: flex;
+}
+
+.logo{
+    background-color: transparent;
+    background-image: url("https://cdn.worldvectorlogo.com/logos/swift-logo-with-text.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 70px;
+    width: 144px;
+    margin-right: 170px;
+}
+
+.footer a {
+    padding: 20px;
+}

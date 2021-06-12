@@ -1,0 +1,26 @@
+.header {
+    grid-area: h;
+
+    height: 60px;
+    width: 100%;
+    background-color: aqua;
+}
+
+.logo {
+    background-color: transparent;
+    background-image: url("https://cdn.worldvectorlogo.com/logos/swift-logo-with-text.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 70px;
+    width: 144px;
+}
+
+.loginBlock {
+    position: absolute;
+    right: 110px;
+    top: 15px;
+}
+
+.loginBlock a {
+    color: white;
+}

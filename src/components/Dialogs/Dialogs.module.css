@@ -1,0 +1,20 @@
+.dialogs{
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+
+.messages{
+    height: 100%;
+}
+
+.newMessage {
+    position: absolute;
+    bottom: 0;
+}
+
+button{
+    border-radius: 50px;
+    background-color: dimgrey;
+}
