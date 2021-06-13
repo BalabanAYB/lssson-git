@@ -6,6 +6,7 @@ const NEW_USERS_PROFILE = 'NEW_USERS_PROFILE';
 const GET_STATUS = 'GET_STATUS';
 const UPDATE_STATUS = 'UPDATE_STATUS';
 const DELETE_POST = 'DELETE_POST';
+const SAVE_PHOTOS = 'SAVE_PHOTOS';
 
 export const addPost = (post) => ({ type: ADD_POST, post })
 export const deletePost = (id) => ({ type: DELETE_POST, id })
@@ -13,6 +14,7 @@ export const newPostText = (text) => ({ type: NEW_POST_TEXT, text: text })
 export const newUsersProfile = (profile) => ({ type: NEW_USERS_PROFILE, profile })
 export const getStatus = (status) => ({ type: GET_STATUS, status })
 export const updateStatus = (status) => ({ type: UPDATE_STATUS, status })
+export const setPhotosAdd = (photos) => ({type: SAVE_PHOTOS, photos})
 
 export const usersProfileThunk = (userId) => async (dispatch) => {
     let data = await usersAPI.getUsersProfile(userId)
@@ -25,10 +27,11 @@ export const getStatusThunk = (userId) => async (dispatch) => {
     dispatch(getStatus(data))
 }
 
-export const setPhotos = (photos) => async (dispatch) => {
+export const savePhotos = (photos) => async (dispatch) => {
+    debugger
     let data = await profileAPI.setPhotos(photos)
     if (data.data.resultCode == 0) {
-        dispatch(setPhotos(photos))
+        dispatch(setPhotosAdd(data.data.data.photos))
     }
 }
 
@@ -48,7 +51,7 @@ let initialState = {
     ],
     newTextChange: '',
     profile: null,
-    status: '',
+    status: ''
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -88,6 +91,13 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 status: action.status
+            }
+        }
+
+        case SAVE_PHOTOS: {
+            return {
+                ...state,
+                profile: {...state.profile, photos: action.photos}
             }
         }
         default: return state;
