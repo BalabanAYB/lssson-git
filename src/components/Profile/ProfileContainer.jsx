@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {compose} from 'redux';
-import {newUsersProfile, usersProfileThunk, getStatusThunk, updateStatusThunk,  savePhotos} from "../../Redux/profileReducer";
+import {newUsersProfile, usersProfileThunk, getStatusThunk, updateStatusThunk,  savePhotos, setFormData} from "../../Redux/profileReducer";
 import {withRouter} from "react-router";
 import {WithAuthRedirect} from '../hoc/WithAuthRedirect';
 import { getUserId } from '../../Redux/authSelect';
 import { getProfile, getStatus } from '../../Redux/profileSelect';
-
 
 
 const ProfileContainerAPI = (props) => {
@@ -26,7 +25,7 @@ const ProfileContainerAPI = (props) => {
 
 
     return <Profile {...props} isOwner={!props.match.params.userId} status={props.status}
-     updateupdateStatusThunk={props.updateStatusThunk} profile={props.profile}/>
+     updateupdateStatusThunk={props.updateStatusThunk}  setFormData={props.setFormData} profile={props.profile}/>
 }
 
 let mapStateToProps = (state) => {
@@ -39,7 +38,7 @@ let mapStateToProps = (state) => {
 }
 
 export default compose (
-    connect(mapStateToProps, {newUsersProfile, usersProfileThunk, getStatusThunk, updateStatusThunk, savePhotos}),
+    connect(mapStateToProps, {newUsersProfile, usersProfileThunk, getStatusThunk, updateStatusThunk, savePhotos, setFormData}),
     WithAuthRedirect,
     withRouter
 ) (ProfileContainerAPI);

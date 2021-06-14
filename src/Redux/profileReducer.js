@@ -43,6 +43,15 @@ export const updateStatusThunk = (status) => async (dispatch) => {
     }
 }
 
+export const setFormData = (profile) => async (dispatch, getState) => {
+    const userId = getState().auth.id
+    debugger
+   let data = await profileAPI.updateProfileInfo(profile)
+    if (data.data.resultCode == 0) {
+        dispatch(usersProfileThunk(userId))
+    }
+}
+
 let initialState = {
     posts: [
         { message: 'Привет React', likeCount: 34, id: 0 },

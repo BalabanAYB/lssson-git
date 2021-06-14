@@ -10,7 +10,7 @@ const Profile = (props) => {
 
     let postData = state.posts.map(post => <Post message={post.message} likeCount={post.likeCount}/>)
     return <div className={s.content}>
-            <Profileinfo profile={props.profile}  isOwner={props.isOwner} savePhoto={props.savePhotos} status={props.status} updateStatusThunk={props.updateStatusThunk}/>
+            <Profileinfo profile={props.profile} setFormData={props.setFormData}  isOwner={props.isOwner} savePhoto={props.savePhotos} status={props.status} updateStatusThunk={props.updateStatusThunk}/>
             <MyPostsContainer store={props.store}/>
             {postData}
         </div>

@@ -4,7 +4,7 @@ const instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
-        "API-KEY": '7ba8a509-0a18-49d5-9b33-79d92e8f6e09'
+        "API-KEY": '7c55db4d-8c91-4201-bc40-e31e7e1bfd08'
     }
 })
 
@@ -22,7 +22,7 @@ export const usersAPI = {
             })
     },
     getUsersProfile(userId) {
-       return profileAPI.getUsersProfile(userId)
+        return profileAPI.getUsersProfile(userId)
         console.warn('The use of this method is already deprecated')
     },
     setFollowUsers(userId) {
@@ -41,35 +41,41 @@ export const usersAPI = {
 
 export const profileAPI = {
     getUsersProfile(userId) {
-    return instance.get(`profile/${userId}`)
-    .then(response => {
-        return response.data
-    })
-},
-getStatus (userId) {
-    return instance.get(`profile/status/${userId}`)
-    .then(response => {
-        return response.data
-    })
-},
-updateStatus (status) {
-    return instance.put(`profile/status/`, {
-        status:status
-    })
-    .then(response => {
-        return response
-    })
-},
- setPhotos (photos) {
-     debugger
-     const formData = new FormData();
-    formData.append('image', photos)
-     return instance.put(`profile/photo`, formData, {
-         headers: {
-             'Content-Type': 'multipart/form-data'
-         }
-     });
- }
+        return instance.get(`profile/${userId}`)
+            .then(response => {
+                return response.data
+            })
+    },
+    getStatus(userId) {
+        return instance.get(`profile/status/${userId}`)
+            .then(response => {
+                return response.data
+            })
+    },
+
+    updateProfileInfo (profile) {
+        return instance.put(`profile`, profile)
+    },
+    updateStatus(status) {
+        return instance.put(`profile/status/`, {
+            status: status
+        })
+            .then(response => {
+                return response
+            })
+    },
+
+
+    setPhotos(photos) {
+        debugger
+        const formData = new FormData();
+        formData.append('image', photos)
+        return instance.put(`profile/photo`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+    }
 }
 
 export const authMeAPI = {
@@ -77,23 +83,23 @@ export const authMeAPI = {
     getAuthMe() {
         return instance.get(`auth/me`)
             .then(response => {
-                if (response.resultCode == 0){
-                return response.data
+                if (response.resultCode == 0) {
+                    return response.data
                 }
             })
     },
 
-    login (email, password, rememberMe = false) {
-        return instance.post(`auth/login`, {email, password, rememberMe})
-        .then(response => {
-            return response.data
-        })
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, { email, password, rememberMe })
+            .then(response => {
+                return response.data
+            })
     },
 
-    logout () {
+    logout() {
         return instance.delete(`auth/login`)
-        .then(response => {
-            return response.data
-        })
+            .then(response => {
+                return response.data
+            })
     }
 }
